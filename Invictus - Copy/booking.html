@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ride - RideShare</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Stripe.js for payments -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">
+            <span class="logo">🚗</span>
+            <h1>RideShare</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#rides">My Rides</a>
+            <a href="#profile">Profile</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Ride Details -->
+        <div class="ride-summary">
+            <h2 id="rideRoute">Mumbai Central → Andheri</h2>
+            <p id="rideTime">🕒 8:00 AM</p>
+            <p id="rideFare">💰 Total Fare: ₹300</p>
+            <p id="userShare">🧾 Your Share: ₹100</p>
+        </div>
+
+        <!-- Payment Form -->
+        <div class="payment-section">
+            <h2>Payment Details</h2>
+            <div id="cardElement" class="card-element"></div>
+            <button id="payButton" class="cta-button" onclick="handlePayment()">
+                Pay Now ₹<span id="amount">100</span>
+            </button>
+            <div id="paymentStatus" class="payment-status"></div>
+        </div>
+    </main>
+
+    <script src="scripts/booking.js"></script>
+</body>
+</html>
